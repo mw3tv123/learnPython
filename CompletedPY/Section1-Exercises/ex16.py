@@ -23,22 +23,36 @@ And so on, until the player gets the word.
 
 ET: 4 hours
 """
+import random
+import re
 
-origin = "EVAPORATE"
+word_file = "/usr/share/dict/words"
+word_list = open(word_file).read().splitlines()
+words = re.sub("['!@#$]", '', str.upper(random.choice(word_list)))
+length = 0
+for each in words:
+    length += 1
+answer = ["_"]*length
+guess_history = []
 print(">>> Welcome to Hangman!")
-guess = [" "*len(data)]
 while True:
-    for element in guess:
-        print(element)
-    user_guess = input(">>> Guess your letters: ")
+    for char in answer:
+        print(char, end=" ", flush=True)
+    user_guess = input("\n>>> Guess your letters: ")
+    guess_history.append(user_guess)
     flag = False
-    if user_guess in data:
-        for index, value in enumerate(origin):
+    if user_guess in words:
+        flag = True
+        for index, value in enumerate(words):
             if value == user_guess:
-                guess[index] = user_guess
+                answer[index] = user_guess
     if flag:
-        print("Incorrect!")
+        print("Correct!\n")
     else:
-        print("Correct!")
-    if guess == data:
+        print("Incorrect!\n")
+    check_list = [x for x in words if x in answer]
+    if len(check_list) == length:
+        print("~ You have guessed the word! Congratulation! ~")
+        print("".join(words))
+        print("Your guessed's history: " + " ".join(guess_history))
         break

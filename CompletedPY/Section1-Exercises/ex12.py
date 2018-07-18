@@ -19,6 +19,8 @@ for i in data:
             temp += 1
         if temp == 2:
             print(data[i])
+            temp = 0
             break
         j += 1
     i += 1
+print(data)

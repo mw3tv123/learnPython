@@ -20,8 +20,10 @@ Estimated time: 30 minutes
 # For condition
 for_list = []
 print("========== This is for_list =========")
-for num in range(1,101):
-    if num % 3 == 0:
+for num in range(1, 101):
+    if num % 3 == 0 and num % 5 == 0:
+        for_list.append('FizzBuzz')
+    elif num % 3 == 0:
         for_list.append('Fizz')
     elif num % 5 == 0:
         for_list.append('Buzz')
@@ -30,5 +32,5 @@ for num in range(1,101):
     print(for_list[num-1])
 # List comprehension
 print("========== This is comprehension_list =========")
-comprehension_list = [num for num in for_list]
+comprehension_list = ["Fizz"*(not num % 3) + "Buzz"*(not num % 5) or num for num in range(1, 101)]
 print(comprehension_list)
