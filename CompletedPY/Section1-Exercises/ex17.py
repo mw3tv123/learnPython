@@ -70,43 +70,71 @@ e-d-c-b-a-b-c-d-e
 ET: 4 hours
 """
 
-n = int(input(">>>Enter your number: "))
-i = 0
-while i < n*2-1:
-    j = 0
-    if i < n-1:
-        while j < n*2-1:
-            if j < n:
-                if j >= n-i-1:
+# Old code
+def rangoli_with_while(n):
+    i = 0
+    while i < n*2-1:
+        j = 0
+        if i < n-1:
+            while j < n*2-1:
+                if j < n:
+                    if j >= n-i-1:
+                        print("*", end=" ")
+                    else:
+                        print("-", end=" ")
+                elif j == n-1:
                     print("*", end=" ")
                 else:
-                    print("-", end=" ")
-            elif j == n-1:
+                    if j <= n+i-1:
+                        print("*", end=" ")
+                    else:
+                        print("-", end=" ")
+                j += 1
+        elif i < n:
+            while j < n*2-1:
                 print("*", end=" ")
+                j += 1
+        else:
+            while j < n*2-1:
+                if j < n:
+                    if j <= i-n:
+                        print("-", end=" ")
+                    else:
+                        print("*", end=" ")
+                elif j == n // 2 + 2:
+                    print("*", end=" ")
+                else:
+                    if j > n*3-i-3:  # Not work with n < 5
+                        print("-", end=" ")
+                    else:
+                        print("*", end=" ")
+                j += 1
+        print()
+        i += 1
+
+
+# New code
+def rangoli_with_for(n):
+    for i in range(0, n*2-1):
+        for j in range(0, n*2-1):
+            if i < n:
+                if n-i-1 <= j <= n+i-1:
+                    print("*", end=" ")
+                else:
+                    print("-", end=" ")
             else:
-                if j <= n+i-1:
+                if i-n+1 <= j <= n*3-i-3:
                     print("*", end=" ")
                 else:
                     print("-", end=" ")
-            j += 1
-    elif i < n:
-        while j < n*2-1:
-            print("*", end=" ")
-            j += 1
-    else:
-        while j < n*2-1:
-            if j < n:
-                if j <= i-n:
-                    print("-", end=" ")
-                else:
-                    print("*", end=" ")
-            elif j == n//2+2:
-                print("*", end=" ")
-            else:
-                if i+n-j < 0:  # Unsolvable
-                    print("-", end=" ")
-                else:
-                    print("*", end=" ")
-            j += 1
-    print()
-    i += 1
+        print()
+
+
+def main():
+    n = int(input(">>>Enter your number: "))
+    rangoli_with_while(n)
+    print("= "*n*2)
+    rangoli_with_for(n)
+
+
+main()

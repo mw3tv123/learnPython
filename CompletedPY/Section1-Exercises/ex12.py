@@ -10,17 +10,7 @@ import random
 data = []
 for i in range(100):
     data.append(random.randint(1, 100))
-
-temp = 0
+data.sort()
 for i in data:
-    j = i + 1
-    while j < len(data):
-        if data[i] == data[j]:
-            temp += 1
-        if temp == 2:
-            print(data[i])
-            temp = 0
-            break
-        j += 1
-    i += 1
-print(data)
+    if data.count(i) >= 2:
+        print(i, end=" ")

@@ -19,7 +19,19 @@ ET: 30 minutes
 
 def count_string(data=""):
     lines = data.split(" ")
-    return lines[0].count(lines[1])
+    l1 = len(lines[0])
+    l2 = len(lines[1])
+    count = temp = 0
+    for i in range(l1):
+        if l1 - i < l2:
+            break
+        for j in range(l2):
+            if lines[0][i+j] == lines[1][j]:
+                temp += 1
+        if temp == l2:
+            count += 1
+        temp = 0
+    return count
 
 
 input_data = input(">>>Enter your string (use space to split substring adn origin string): ")

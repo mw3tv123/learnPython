@@ -16,7 +16,7 @@ ET: 30 minutes
 data = "thequickbrownfoxjumpsoverthelazydog"
 char_list = {}
 for c in data:
-    if not char_list.__contains__(c):
+    if c not in char_list:
         char_list[c] = 1
     else:
         char_list[c] = char_list.get(c) + 1

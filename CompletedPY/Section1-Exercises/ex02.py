@@ -25,7 +25,7 @@ To your heart.
 # https://www.poetrysoup.com/poem/cross_my_heart_609765
 
 result = ""
-temp = data.strip().splitlines()
-for line in temp:
+data = data.strip().splitlines()
+for line in data:
     result += line[0]
 print(result.title())

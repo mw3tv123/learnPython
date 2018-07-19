@@ -53,6 +53,6 @@ while True:
     check_list = [x for x in words if x in answer]
     if len(check_list) == length:
         print("~ You have guessed the word! Congratulation! ~")
-        print("".join(words))
+        print("\t\t=====> " + "".join(words) + " <=====")
         print("Your guessed's history: " + " ".join(guess_history))
         break

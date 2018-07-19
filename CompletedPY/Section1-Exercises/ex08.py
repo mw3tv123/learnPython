@@ -8,6 +8,5 @@ Tips: list comprehension always create new list
 ET: 30 minutes
 """
 
-data = str(2**1000)
-result = [int(x) for x in data]
+result = [int(x) for x in str(2**1000)]
 print(sum(result))

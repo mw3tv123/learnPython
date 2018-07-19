@@ -78,9 +78,5 @@ ET: 4 hours
 """
 
 from collections import namedtuple
+Student = namedtuple('Student', 'ID MARK NAME CLASS', verbose=True)
 
-Point = namedtuple('Point', 'x,y')
-pt1 = Point(1, 2)
-pt2 = Point(3, 4)
-dot_product = (pt1.x * pt2.x) + (pt1.y * pt2.y)
-print(dot_product)
