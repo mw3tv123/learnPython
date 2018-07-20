@@ -90,8 +90,9 @@ MARKS      CLASS      NAME       ID
 input_data = tuple(testcase01.strip().splitlines())
 Student = namedtuple('Student', input_data[1])
 students = []
+n = int(input_data[0])
 average = 0
-for i in range(int(input_data[0])):
+for i in range(n):
     students.append(Student(*tuple(input_data[i+2].split())))
     average += int(students[i].MARKS)
-print(average/5)
+print(average/n)
