@@ -68,7 +68,7 @@ TESTCASE 02
 81.00
 
 Explanation
-TESTCASE 01
+TESTCASE 0100
 Average = (97+ 50+ 91+ 72 + 80)/5
 
 Can you solve this challenge in 4 lines of code or less?
@@ -78,5 +78,20 @@ ET: 4 hours
 """
 
 from collections import namedtuple
-Student = namedtuple('Student', 'ID MARK NAME CLASS', verbose=True)
-
+testcase01 = """
+5
+MARKS      CLASS      NAME       ID
+92         2          Calum      1
+82         5          Scott      2
+94         2          Jason      3
+55         8          Glenn      4
+82         2          Fergus     5
+"""
+input_data = tuple(testcase01.strip().splitlines())
+Student = namedtuple('Student', input_data[1])
+students = []
+average = 0
+for i in range(int(input_data[0])):
+    students.append(Student(*tuple(input_data[i+2].split())))
+    average += int(students[i].MARKS)
+print(average/5)
