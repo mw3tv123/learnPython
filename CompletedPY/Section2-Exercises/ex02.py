@@ -8,22 +8,21 @@ ET 30m
 
 
 class MyString:
-    """Simple string method"""
 
-    def __init__(self, string):
-        self.string = string
+    string = ""
 
     def getString(self):
         self.string = input(">>> Enter a string: ")
 
     def printString(self):
-        return self.string.capitalize()
+        print(self.string.capitalize())
 
-    def testCase(self):
 
+def test_case():
+    s = MyString()
+    s.getString()
+    s.printString()
 
 
 if __name__ == "__main__":
-    s = MyString()
-    s.getString()
-    print(s.printString())
+    test_case()

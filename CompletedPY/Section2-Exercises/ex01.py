@@ -3,6 +3,6 @@ which contains every number. Suppose the following input is supplied to the prog
 the output should be: ['34', '67', '55', '33', '12', '98'] ('34', '67', '55', '33', '12', '98') ET 30m """
 
 data = input(">>>Enter your number sequence: ")
-_list = list(data.split(','))
-_tuple = tuple(data.split(','))
+_list = data.split(',')
+_tuple = tuple(_list)
 print(_list, _tuple)
