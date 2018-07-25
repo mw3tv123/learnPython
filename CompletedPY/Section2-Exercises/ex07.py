@@ -4,3 +4,26 @@ LEFT and RIGHT with a given steps. The trace of robot movement is shown as the f
 after a sequence of movement and original point. If the distance is a float, then just print the nearest integer.
 Example: If the following tuples are given as input to the program: UP 5 DOWN 3 LEFT 3 RIGHT 2 Then, the output of
 the program should be: 2 ET: 1hour """
+
+
+import math
+position = [0, 0]
+while True:
+    data = input(">>> Enter your direction and step: ")
+    data = data.split(' ')
+    if data[0] == "" or data[1] == "":
+        break
+    direction = data[0]
+    step = int(data[1])
+    if direction == "UP":
+        position[0] += step
+    elif direction == "DOWN":
+        position[0] -= step
+    elif direction == "RIGHT":
+        position[1] += step
+    elif direction == "LEFT":
+        position[1] -= step
+    else:
+        continue
+distance = round(math.sqrt(position[0]**2+position[1]**2))
+print(distance)

@@ -4,23 +4,14 @@ ET 1h
 """
 
 
-class Generator:
-    def __init__(self, data):
-        self.data = data
-        self.index = 0
-
-    def __iter__(self):
-        return self
-
-    def next(self):
-        if self.index == len(self.data):
-            raise StopIteration
-        self.index = self.index + 1
-        if self.data[self.index] % 7 == 0:
-            return self.data[self.index]
+def generator(n):
+    i = 0
+    while i < n:
+        j = i
+        i += 1
+        if j % 7 == 0:
+            yield j
 
 
-num_list = [x for x in range(10)]
-gen = Generator(num_list)
-for char in gen:
-    print(char)
+for i in generator(100):
+    print(i)
