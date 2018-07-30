@@ -1,0 +1,196 @@
+'''
+Write a program that visualize the steps to solve Tower of Hanoi problem.
+
+NOTE: The number of disks is provided by user.
+
+Example:
+
+   1       2       3
+   |       |       |
+  #|#      |       |
+ ##|##     |       |
+###|###    |       |
+---+--- ---+--- ---+---
+
+   .---------------.
+                   V
+   1       2       3
+   |       |       |
+   |       |       |
+ ##|##     |       |
+###|###    |      #|#
+---+--- ---+--- ---+---
+
+   .-------.
+           V
+   1       2       3
+   |       |       |
+   |       |       |
+   |       |       |
+###|###  ##|##    #|#
+---+--- ---+--- ---+---
+
+           .-------.
+           V
+   1       2       3
+   |       |       |
+   |       |       |
+   |      #|#      |
+###|###  ##|##     |
+---+--- ---+--- ---+---
+
+   .---------------.
+                   V
+   1       2       3
+   |       |       |
+   |       |       |
+   |      #|#      |
+   |     ##|##  ###|###
+---+--- ---+--- ---+---
+
+   .-------.
+   V
+   1       2       3
+   |       |       |
+   |       |       |
+   |       |       |
+  #|#    ##|##  ###|###
+---+--- ---+--- ---+---
+
+           .-------.
+                   V
+   1       2       3
+   |       |       |
+   |       |       |
+   |       |     ##|##
+  #|#      |    ###|###
+---+--- ---+--- ---+---
+
+
+   .---------------.
+                   V
+   1       2       3
+   |       |       |
+   |       |      #|#
+   |       |     ##|##
+   |       |    ###|###
+---+--- ---+--- ---+---
+
+ET: 8 hours
+'''
+
+
+class Rod():
+    def __init__(self, number, disks):
+        self.number = number
+        self.disks = disks
+
+
+def tree_width(n):
+    return 2*n + 1
+
+
+def tree_height(n):
+    return n + 2
+
+
+def tree_half_width(n):
+    return n
+
+
+def tree_space(n):
+    return 1
+
+
+def left_tree_count(here):
+    return here - 1
+
+'''
+
+line           .---------------.
+pointer                        V
+title          1       2       3
+head           |       |       |
+      /        |       |      #|#
+body-+         |       |     ##|##
+      \        |       |    ###|###
+foot        ---+--- ---+--- ---+---
+'''
+
+def tostring_tree(n, disks, title):
+    assert len(title) == 1
+
+    def tostring_title(n, title):
+        return ['{0}{1}{0}'.format(tree_half_width(n)*' ', title)]
+
+    def tostring_head(n):
+        return ['{0}{1}{0}'.format(tree_half_width(n)*' ', '|')]
+
+    def tostring_foot(n):
+        return ['{0}{1}{0}'.format(tree_half_width(n)*'-', '+')]
+
+    def tostring_body(n, disks):
+        lines = []
+        for i in range(0, n):
+            size = disks[i] if i < len(disks) else 0
+            lines.append('{0}{1}{2}{1}{0}'.format((n-size)*' ', size*'#', '|'))
+        return reversed(lines)
+
+    lines = tostring_title(n, title)
+    lines.extend(tostring_head(n))
+    lines.extend(tostring_body(n, disks))
+    lines.extend(tostring_foot(n))
+    return lines
+
+
+def tostring_movement(n, nfrom, nto):
+    def line(n, nfrom, nto):
+        nfrom, nto = tuple(sorted([nfrom, nto]))
+        s = (left_tree_count(nfrom)*(tree_width(n)+tree_space(n)) + tree_half_width(n))*' '
+        s += '.'
+        s += ((tree_width(n)+1)*(nto - nfrom)-1)*'-'
+        s += '.'
+        return s
+
+    def pointer(n, nfrom, nto):
+        return (left_tree_count(nto)*(tree_width(n)+tree_space(n)) + tree_half_width(n))*' ' + 'V'
+
+    return [line(n, nfrom, nto), pointer(n, nfrom, nto)]
+
+
+def tostring_tree_movement(n, src, dst, aux, nfrom, nto):
+    spaces = [' ']*(tree_height(n) + 1)
+    lines = tostring_movement(n, nfrom, nto)
+    lines.extend([''.join(i) for i in zip(tostring_tree(n, src, '1'), spaces, tostring_tree(n, aux, '2'), spaces, tostring_tree(n, dst, '3'))])
+    return lines
+
+
+def move(n, src, dst, aux, real_n, real_src, real_dst, real_aux, fnoutput):
+    if n == 0: return
+
+    # move n - 1 disks from src to aux, so they are out of the way
+    move(n - 1, src, aux, dst, real_n, real_src, real_dst, real_aux, fnoutput)
+
+    # move the nth disk from src to dst
+    dst.disks.append(src.disks.pop())
+    fnoutput(real_n, real_src.disks, real_dst.disks, real_aux.disks, src.number, dst.number)
+
+    # move the n - 1 disks that we left on aux onto dst
+    move(n - 1, aux, dst, src, real_n, real_src, real_dst, real_aux, fnoutput)
+
+
+if __name__ == '__main__':
+    lines = []
+    def output(n, src, dst, aux, nfrom, nto):
+        lines.extend(tostring_tree_movement(n, src, dst, aux, nfrom, nto))
+        lines.extend(['']*2)
+
+    n = 5
+    rod_src = Rod(1, list(range(n, 0, -1)))
+    rod_aux = Rod(2, [])
+    rod_dst = Rod(3, [])
+
+    # initiate call from src A to dst C with aux B
+    move(n, rod_src, rod_dst, rod_aux, real_n=n, real_src=rod_src, real_dst=rod_dst, real_aux=rod_aux, fnoutput=output)
+
+    print('\n'.join(lines))

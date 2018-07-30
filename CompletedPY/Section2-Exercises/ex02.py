@@ -13,6 +13,10 @@ class MyString:
 
     def getString(self):
         self.string = input(">>> Enter a string: ")
+        for c in self.string:
+            if c.isdigit():
+                return True
+        return False
 
     def printString(self):
         print(self.string.capitalize())
@@ -20,7 +24,9 @@ class MyString:
 
 def test_case():
     s = MyString()
-    s.getString()
+    while True:
+        if not s.getString():
+            break
     s.printString()
 
 

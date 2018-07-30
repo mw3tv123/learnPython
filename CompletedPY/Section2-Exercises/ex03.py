@@ -6,7 +6,24 @@ Then, the output of the program should be: [[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0
 ET 1h
 """
 
-X = int(input(">>> Enter X: "))
-Y = int(input(">>> Enter Y: "))
-result = [[i*j for j in range(Y)] for i in range(X)]
-print(result)
+
+def validate_input():
+    while True:
+        x = input(">>> Enter x: ")
+        y = input(">>> Enter y: ")
+        if x.isdigit() and y.isdigit():
+            return int(x), int(y)
+        print("\n!!! Wrong file type !!!\n")
+
+
+def process_list(x, y):
+    return [[i*j for j in range(y)] for i in range(x)]
+
+
+def main():
+    a, b = validate_input()
+    print(process_list(a, b))
+
+
+if __name__ == "__main__":
+    main()
