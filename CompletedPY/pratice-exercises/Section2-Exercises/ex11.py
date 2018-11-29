@@ -64,7 +64,6 @@ def validate_input():
     return valid_list, valid_comp
 
 
-# Main function
 def main():
     usr_list, comp_func = validate_input()
     sort(usr_list, comp_func)
