@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="28a5bf57-38ae-4068-8e69-c182d2556603" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/get-web-content.py" beforeDir="false" afterPath="$PROJECT_DIR$/get-web-content.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../flask-project/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../flask-project/app/routes.py" afterDir="false" />
-    </list>
+    <list default="true" id="28a5bf57-38ae-4068-8e69-c182d2556603" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,56 +9,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/get-web-content.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.virtualenvs/get-web-content.py/lib/python3.5/site-packages/youtube_dl/downloader/common.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="365" column="26" selection-start-line="365" selection-start-column="26" selection-end-line="365" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#49#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/.virtualenvs/get-web-content.py/lib/python3.5/site-packages/youtube_dl/downloader/http.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="108" column="41" selection-start-line="108" selection-start-column="41" selection-end-line="108" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.virtualenvs/get-web-content.py/lib/python3.5/site-packages/youtube_dl/YoutubeDL.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="2210" column="29" selection-start-line="2210" selection-start-column="29" selection-end-line="2210" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.virtualenvs/get-web-content.py/lib/python3.5/site-packages/youtube_dl/utils.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="541" column="4" selection-start-line="541" selection-start-column="4" selection-end-line="541" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -69,6 +17,14 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/../</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -82,17 +38,30 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="65" />
+    <option name="x" value="75" />
     <option name="y" value="24" />
     <option name="width" value="928" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="pratice-exercises" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pratice-exercises" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -124,9 +93,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="928" height="1056" extended-state="4" />
+    <frame x="75" y="24" width="928" height="1056" extended-state="4" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24972376" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24972376" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -168,13 +137,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/get-web-content.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.virtualenvs/get-web-content.py/lib/python3.5/site-packages/youtube_dl/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -187,6 +149,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/get-web-content.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/get-web-content.py/lib/python3.5/site-packages/youtube_dl/YoutubeDL.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37908">
+          <caret line="2210" column="29" selection-start-line="2210" selection-start-column="29" selection-end-line="2210" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/get-web-content.py/lib/python3.5/site-packages/youtube_dl/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8568">
+          <caret line="541" column="4" selection-start-line="541" selection-start-column="4" selection-end-line="541" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/get-web-content.py/lib/python3.5/site-packages/youtube_dl/downloader/http.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="109" column="78" selection-start-line="109" selection-start-column="78" selection-end-line="109" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/.virtualenvs/get-web-content.py/lib/python3.5/site-packages/youtube_dl/downloader/common.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -194,27 +184,6 @@
           <folding>
             <element signature="e#0#49#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/get-web-content.py/lib/python3.5/site-packages/youtube_dl/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="541" column="4" selection-start-line="541" selection-start-column="4" selection-end-line="541" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/get-web-content.py/lib/python3.5/site-packages/youtube_dl/YoutubeDL.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="2210" column="29" selection-start-line="2210" selection-start-column="29" selection-end-line="2210" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/get-web-content.py/lib/python3.5/site-packages/youtube_dl/downloader/http.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="108" column="41" selection-start-line="108" selection-start-column="41" selection-end-line="108" selection-end-column="41" />
         </state>
       </provider>
     </entry>
